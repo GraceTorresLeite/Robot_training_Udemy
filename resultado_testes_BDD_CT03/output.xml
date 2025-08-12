@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.6 on win32)" generated="2025-08-12T15:55:02.210120" rpa="false" schemaversion="5">
+<suite id="s1" name="amazon testes BDD" source="C:\Users\grace\Documents\Robot\Udemy_May_Fernandes\amazon_testes_BDD.robot">
+<test id="s1-t1" name="CT03 - Adicionar produto no carrinho" line="27">
+<kw name="Abrir o navegador" owner="amazon_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-12T15:55:02.706058" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-12T15:55:02.705737" elapsed="1.823527"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-12T15:55:04.529763" elapsed="0.186134"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:02.704198" elapsed="2.012066"/>
+</kw>
+<kw name="Dado que estou na home page do site Amazon.com.br" owner="amazon_resources_BDD">
+<kw name="Acessar a home page do site Amazon.com.br" owner="amazon_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-12T15:55:04.720834" level="INFO">Opening url 'http://www.amazon.com.br'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-12T15:55:04.720336" elapsed="1.823412"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Botao comprar visivel" owner="amazon_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-08-12T15:55:11.899618" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-12T15:55:11.900015" level="FAIL">Element '//button[contains(., "Continuar comprando")]' not visible after 5 seconds.</msg>
+<arg>${BUTTON_COMPRANDO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-08-12T15:55:06.545738" elapsed="5.358633">Element '//button[contains(., "Continuar comprando")]' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-08-12T15:55:06.544957" elapsed="5.359779">Element '//button[contains(., "Continuar comprando")]' not visible after 5 seconds.</status>
+</kw>
+<msg time="2025-08-12T15:55:11.905029" level="INFO">${botao_visivel} = False</msg>
+<var>${botao_visivel}</var>
+<arg>Botao comprar visivel</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-12T15:55:06.544319" elapsed="5.360782"/>
+</kw>
+<if>
+<branch type="IF" condition="${botao_visivel}">
+<kw name="Clicar btn comprando" owner="amazon_resources">
+<status status="NOT RUN" start="2025-08-12T15:55:11.905887" elapsed="0.000114"/>
+</kw>
+<status status="NOT RUN" start="2025-08-12T15:55:11.905329" elapsed="0.000761"/>
+</branch>
+<branch type="ELSE">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-12T15:55:36.906969" level="INFO">Slept 25 seconds.</msg>
+<arg>25s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-12T15:55:11.906432" elapsed="25.000741"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENU_ELETRONICOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-12T15:55:36.907546" elapsed="0.042198"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:11.906220" elapsed="25.043642"/>
+</branch>
+<status status="PASS" start="2025-08-12T15:55:11.905266" elapsed="25.044673"/>
+</if>
+<status status="PASS" start="2025-08-12T15:55:04.719499" elapsed="32.230539"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:04.718174" elapsed="32.231946"/>
+</kw>
+<kw name="Quando Pesquisar pelo produto &quot;Xbox Series S&quot;" owner="amazon_resources_BDD">
+<kw name="Pesquisar o produto &quot;Xbox Series S&quot;" owner="amazon_resources" source_name="Pesquisar o produto &quot;${PRODUTO}&quot;">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-12T15:55:36.952632" level="INFO">Typing text 'Xbox Series S' into text field 'twotabsearchtextbox'.</msg>
+<arg>locator=twotabsearchtextbox</arg>
+<arg>text=${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-12T15:55:36.952139" elapsed="0.316495"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:36.951610" elapsed="0.317293"/>
+</kw>
+<kw name="Clicar btn Pesquisar" owner="amazon_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-12T15:55:37.270624" level="INFO">Clicking element 'nav-search-submit-button'.</msg>
+<arg>locator=nav-search-submit-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-12T15:55:37.270001" elapsed="4.114680"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:37.269243" elapsed="4.115678"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:36.950712" elapsed="4.434347"/>
+</kw>
+<kw name="E adicionar o produto no carrinho" owner="amazon_resources_BDD">
+<kw name="Verificar busca da lista de pesquisa &quot;Xbox Series S&quot;" owner="amazon_resources" source_name="Verificar busca da lista de pesquisa &quot;${PRODUTO}&quot;">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-12T15:55:51.387953" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-12T15:55:41.387329" elapsed="10.000818"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=//h2[@aria-label='Xbox Series S']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-12T15:55:51.388519" elapsed="0.035101"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:41.386650" elapsed="10.037241"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-12T15:55:51.424420" level="INFO">Clicking element '//h2[@aria-label='Xbox Series S']'.</msg>
+<arg>locator=//h2[@aria-label='Xbox Series S']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-12T15:55:51.424141" elapsed="3.431744"/>
+</kw>
+<kw name="Adicionar produto o carrinho" owner="amazon_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-12T15:55:54.857035" level="INFO">Clicking element 'add-to-cart-button'.</msg>
+<arg>locator=add-to-cart-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-12T15:55:54.856740" elapsed="0.285366"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:54.856249" elapsed="0.286104"/>
+</kw>
+<kw name="Clicar botao sem garantia" owner="amazon_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=//*[@id="attachSiNoCoverage"]/span/input</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-12T15:55:55.143439" elapsed="1.237068"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-12T15:55:56.381099" level="INFO">Clicking element '//*[@id="attachSiNoCoverage"]/span/input'.</msg>
+<arg>locator=//*[@id="attachSiNoCoverage"]/span/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-12T15:55:56.380819" elapsed="0.356543"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:55.142768" elapsed="1.594892"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:41.385807" elapsed="15.352032"/>
+</kw>
+<kw name="Então o produto estará disponível para compra" owner="amazon_resources_BDD">
+<kw name="Verificar produto add carrinho" owner="amazon_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=//*[@id="nav-cart-count"][contains(.,'${QUANTIDADE_PRODUTO_ADD_CARD}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-12T15:55:56.744946" elapsed="3.227460"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:56.743834" elapsed="3.228747"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:56.742973" elapsed="3.229722"/>
+</kw>
+<kw name="Fechar o navegador" owner="amazon_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-12T15:56:00.217899" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-12T15:55:59.973942" elapsed="0.244188"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-12T15:56:00.218593" elapsed="2.896076"/>
+</kw>
+<status status="PASS" start="2025-08-12T15:55:59.973468" elapsed="3.141499"/>
+</kw>
+<doc>Valida produto add no carrinho</doc>
+<tag>card</tag>
+<status status="PASS" start="2025-08-12T15:55:02.702982" elapsed="60.412373"/>
+</test>
+<doc>Essa suite testa o site da Amazon.com.br</doc>
+<status status="PASS" start="2025-08-12T15:55:02.212768" elapsed="60.904357"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">card</stat>
+</tag>
+<suite>
+<stat name="amazon testes BDD" id="s1" pass="1" fail="0" skip="0">amazon testes BDD</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
