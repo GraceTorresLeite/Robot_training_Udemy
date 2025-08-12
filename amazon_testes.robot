@@ -23,4 +23,30 @@ CT02 - Pesquisa de produto
     Clicar btn Pesquisar
     Verificar busca da lista de pesquisa "Xbox Series S"
 
+CT03 - Adicionar produto no carrinho
+    [Documentation]  Valida produto add no carrinho
+    [tags]           card 
+    Acessar a home page do site Amazon.com.br
+    Pesquisar o produto "Xbox Series S"
+    Clicar btn Pesquisar
+    Verificar busca da lista de pesquisa "Xbox Series S"
+    Click Element    locator=//h2[@aria-label='Xbox Series S']
+    Adicionar produto o carrinho
+    Clicar botao sem garantia
+    Verificar produto add carrinho
+
+CT04 - Remover produto carrinho
+    [Documentation]  Valida produto removido do carrinho
+    [Tags]           remove 
+    Acessar a home page do site Amazon.com.br
+    Pesquisar o produto "Xbox Series S"
+    Clicar btn Pesquisar
+    Verificar busca da lista de pesquisa "Xbox Series S"
+    Click Element    locator=//h2[@aria-label='Xbox Series S']
+    Adicionar produto o carrinho
+    Clicar botao sem garantia
+    Clicar carrinho
+    Excluir produto carrinho
+    Verificar carrinho vazio
+
 
