@@ -54,7 +54,7 @@ Clicar btn Pesquisar
 Clicar btn comprando
     Click Button    locator=${BUTTON_COMPRANDO}
 Verificar busca da lista de pesquisa "${PRODUTO}"
-    Sleep    15s
+    Sleep    10s
     Wait Until Element Is Visible    locator=//h2[@aria-label='Xbox Series S']
 
 Adicionar produto o carrinho

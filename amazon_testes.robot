@@ -45,6 +45,7 @@ CT04 - Remover produto carrinho
     Click Element    locator=//h2[@aria-label='Xbox Series S']
     Adicionar produto o carrinho
     Clicar botao sem garantia
+    Sleep    10s 
     Clicar carrinho
     Excluir produto carrinho
     Verificar carrinho vazio
