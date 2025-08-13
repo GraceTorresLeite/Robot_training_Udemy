@@ -1,11 +1,12 @@
 # Robot_training_Udemy
 
 ## [Documentation](https://robotframework.org/?tab=1#getting-started)
+### [Selenium Library](https://github.com/robotframework/SeleniumLibrary/?tab=readme-ov-file#installation)
 
 | Step    | Instalations                                                   | 
 | ------- | ---------------------------------------------------------------| 
-|    1    | pip install robotframework                                     |   
-|    2    | python download                                                |   
+|    1    | python download                                    |   
+|    2    | pip install robotframework                                             |   
 |    3    | pip install --upgrade robotframework-seleniumlibrary           |  
 |    4    | pip install robotframework-requests                            |       
 |    5    | pip list (see all packages)                                    |                 
