@@ -2,14 +2,17 @@
 
 ## [Documentation](https://robotframework.org/?tab=1#getting-started)
 ### [Selenium Library](https://github.com/robotframework/SeleniumLibrary/?tab=readme-ov-file#installation)
+### [FakerLibrary](https://marketsquare.github.io/robotframework-faker/#Language%20Code)
+#### [Robot Framework keyword library wrapper for](https://github.com/joke2k/faker)
 
 | Step    | Instalations                                                   | 
 | ------- | ---------------------------------------------------------------| 
-|    1    | python download                                    |   
-|    2    | pip install robotframework                                             |   
+|    1    | python download                                                |   
+|    2    | pip install robotframework                                     |   
 |    3    | pip install --upgrade robotframework-seleniumlibrary           |  
-|    4    | pip install robotframework-requests                            |       
-|    5    | pip list (see all packages)                                    |                 
+|    4    | pip install robotframework-requests                            |  
+|    5    | pip install robotframework-faker                               |
+|    6    | pip list (see all packages)                                    |                 
 
 
 | Examples| Terminal                                                       | 
