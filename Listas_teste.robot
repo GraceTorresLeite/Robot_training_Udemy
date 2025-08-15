@@ -1,6 +1,7 @@
 *** Settings ***
 Library  BuiltIn 
 Library    FakerLibrary    locale=pt_BR    seed=124
+Library    String
 
 *** Variables ***
 @{ANO}  JAN  FEV  MAR  ABR  MAI  JUN  JUL  AGO  SET  OUT  NOV  DEZ   
@@ -22,7 +23,7 @@ Library    FakerLibrary    locale=pt_BR    seed=124
 &{PESSOA}    name=Fulano Silva    email=fulano@teste.com    gender=Female    age=18
 
 ${DOMINIO}    teste.com
-${LOCALE}    pt_BR
+${LOCALE}    pt_BR 
 
 *** Keywords ***
 #CT01 - Imprimir lista
@@ -68,6 +69,10 @@ Gerando email customizado
     ${email}    Set Variable    ${nome}${sobrenome}_${word}@${DOMINIO}
     RETURN    ${email}
 
+Gerando string aleatoria
+    ${palavras_aleatorias}=    Generate Random String    length=6    chars=Letters    
+    RETURN   ${palavras_aleatorias}
+
 
 *** Test Cases ***
 CT01 - Imprimir lista
@@ -81,9 +86,16 @@ CT03 - Teste usando subkeyword com argumentos
     [Tags]    ComArgumento
     Teste 03 com subkeyword com argumento
 
-CT04 - Gerar e-mail concatenando variaveis
+CT04 - Gerar e-mail com interpolação das variaveis
     [Documentation]    Gerar email na liguagem português Brasil
     [Tags]    gerando_email
     ${email_gerado}=    Gerando email customizado    Fulano    Silva
     Log To Console    message=${\n}${email_gerado}
     Log To Console    message=${\n}Linguagem pais de origem: ${LOCALE}
+
+CT05 - Gerar string aleatoria
+    [Documentation]    usando strings randomicas
+    [Tags]    string_random
+     ${palavras_aleatorias}=    Gerando string aleatoria
+    Log To Console    ${palavras_aleatorias}
+   
