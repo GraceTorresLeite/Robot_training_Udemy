@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    Exemplo didático para exemplificar o uso de LOGs nos testes 
 *** Variables ***
+@{NUMEROS}    1    2    3    4    5    6    7    8    9    10
 @{FRUTAS}    maça    banana    uva    abacaxi    morango    laranja
 
 *** Test Cases ***
@@ -23,6 +24,11 @@ CT04 - FOR do tipo IN ENUMERATE
 CT05 - Saindo do FOR
     [Documentation]    Controla o momento em que a condição é verdadeira e encerra o loop
     Usando EXIT FOR LOOP IF
+
+CT06 - Tarefa usando lista NUMEROS 
+    [Documentation]      Desafio seção 5 
+    [Tags]    secao_5
+    Usando lista 5 ou 10
 
 *** Keywords ***
 Usando Repeat Keyword
@@ -55,4 +61,19 @@ Usando EXIT FOR LOOP IF
         Log    Minha fruta está no índice: ${index} e seu nome é : ${element_FRUTA}
         Log To Console    Minha fruta está no índice: ${index} e seu nome é : ${element_FRUTA}
         Exit For Loop If    '${element_FRUTA}' == 'uva'
+    END
+
+Usando lista 5 ou 10
+    FOR    ${element_numero}    IN    @{NUMEROS}
+        IF    ${element_numero} == 5
+            Log    message=Eu sou o número ${element_numero} !
+            Log To Console   message=Eu sou o número ${element_numero} !
+        ELSE IF  ${element_numero} == 10
+            Log    message=Eu sou o número ${element_numero} !
+            Log To Console   message=Eu sou o número ${element_numero} !
+        ELSE      
+            Log    message=Eu não sou o número 5 nem o 10, eu sou ${element_numero} !
+            Log To Console   message=Eu não sou o número 5 nem o 10, eu sou ${element_numero} !
+        END
+      
     END
